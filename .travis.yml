@@ -3,20 +3,20 @@ services:
   - docker
 
 before_install:
-  - docker build -t simonyang/react-test -f ./client/Dockerfile.dev ./client
+  - docker build -t miloverynice/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true simonyang/react-test npm test -- --coverage
+  - docker run -e CI=true miloverynice/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t simonyang/multi-client ./client
-  - docker build -t simonyang/multi-nginx ./nginx
-  - docker build -t simonyang/multi-server ./server
-  - docker build -t simonyang/multi-worker ./worker
+  - docker build -t miloverynice/multi-client ./client
+  - docker build -t miloverynice/multi-nginx ./nginx
+  - docker build -t miloverynice/multi-server ./server
+  - docker build -t miloverynice/multi-worker ./worker
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
-  - docker push simonyang/multi-client
-  - docker push simonyang/multi-nginx
-  - docker push simonyang/multi-server
-  - docker push simonyang/multi-worker
+  - docker push miloverynice/multi-client
+  - docker push miloverynice/multi-nginx
+  - docker push miloverynice/multi-server
+  - docker push miloverynice/multi-worker
