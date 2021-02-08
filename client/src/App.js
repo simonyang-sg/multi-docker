@@ -10,6 +10,7 @@ function App() {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <h1 className="App-title">Fib Calculator</h1>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
           <a
@@ -22,8 +23,8 @@ function App() {
           </a>
         </header>
         <div>
-          <Route exact path="/" component={Fib}/>
-          <Route path="/otherPage" component={OtherPage}/>
+          <Route exact path="/" component={Fib} />
+          <Route path="/otherPage" component={OtherPage} />
         </div>
       </div>
     </Router>
