@@ -12,14 +12,14 @@
             "name": "server",
             "image": "miloverynice/multi-server",
             "hostname": "api",
-            "essential": false,
+            "essential": true,
             "memory": 128
         },
         {
             "name": "worker",
             "image": "miloverynice/multi-worker",
             "hostname": "worker",
-            "essential": false,
+            "essential": true,
             "memory": 128
         },
         {
