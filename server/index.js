@@ -19,6 +19,7 @@ const pgClient = new Pool({
 });
 
 pgClient.on("connect", () => {
+  console.log("Connected to Postgres.");
   pgClient
     .query("CREATE TABLE IF NOT EXISTS values (number INT)")
     .catch((err) => console.log(err));
